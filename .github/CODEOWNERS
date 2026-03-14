@@ -1,0 +1,7 @@
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+# The last matching pattern in the file has the most precedence.
+
+# Global rule:
+# The default owners for the entire repository.
+*       @millsks
