@@ -1,0 +1,17 @@
+[workspace]
+authors = ["Kevin Mills <millsks@gmail.com>"]
+channels = ["conda-forge"]
+name = "data-lineage-book"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+# Generate changelog from conventional commits
+changelog = "git-cliff --output CHANGELOG.md"
+# Preview unreleased changes (stdout only, no file write)
+changelog-preview = "git-cliff --unreleased"
+# Generate changelog for a specific tag (usage: pixi run changelog-tag -- v1.0.0)
+changelog-tag = "git-cliff --tag"
+
+[dependencies]
+git-cliff = ">=2.8,<3"

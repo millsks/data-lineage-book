@@ -268,8 +268,8 @@ graph LR
     end
 
     linkStyle 0 stroke:#F56C6C,stroke-width:3px
+    linkStyle 2 stroke:#F56C6C,stroke-width:3px
     linkStyle 3 stroke:#F56C6C,stroke-width:3px
-    linkStyle 4 stroke:#F56C6C,stroke-width:3px
 ```
 
 ### Namespace Strategy

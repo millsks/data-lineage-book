@@ -31,7 +31,7 @@ pixi install
 pixi shell -e exercises
 
 # Or run commands directly without activating
-pixi run -e exercises python docs/exercises/ch04_first_graph.py
+pixi run -e exercises python exercises/ch04_first_graph.py
 ```
 
 > **Note**: If the `exercises` environment is not yet defined in `pixi.toml`,

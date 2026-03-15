@@ -145,7 +145,11 @@ graph LR
 
 ## License
 
-This guide is part of the [LENS](https://github.com/millsks/lens-io) project and is licensed under the Apache License, Version 2.0.
+**Book content** (all `.md` files) is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). See [LICENSE](LICENSE) for the full legal text.
+
+**Exercise code** (all files under `exercises/`) is licensed under the [MIT License](LICENSE-CODE).
+
+You are free to share and adapt this material for any purpose, including commercially, as long as you give appropriate credit.
 
 ---
 
