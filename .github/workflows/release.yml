@@ -26,10 +26,19 @@ jobs:
       contents: write
 
     steps:
+      # --- Mint a short-lived app token to bypass branch ruleset ---
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Validate version format
         run: |
@@ -58,7 +67,7 @@ jobs:
       - name: Remove existing tag and release (if force_recreate enabled)
         if: inputs.force_recreate == true
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           VERSION="v${{ env.NEW_TAG }}"
 
@@ -208,7 +217,7 @@ jobs:
           draft: false
           prerelease: ${{ inputs.prerelease }}
           files: build/Data-Lineage-From-Novice-to-Expert.pdf
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Release summary
         run: |
