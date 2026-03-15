@@ -1,0 +1,37 @@
+# Pandoc defaults file for KDP PDF build
+# Usage: pandoc --defaults=scripts/metadata.yaml ...
+
+# Metadata variables
+metadata:
+  title: "Data Lineage: From Novice to Expert"
+  subtitle: "A hands-on guide to understanding, implementing, and mastering data lineage"
+  author: "Kevin Samuel Mills"
+  date: "2026"
+  lang: en-US
+  documentclass: book
+  classoption:
+    - openany
+    - 11pt
+  fontsize: 11pt
+  mainfont: "Palatino"
+  sansfont: "Helvetica Neue"
+  monofont: "Menlo"
+  geometry:
+    - paperwidth=7in
+    - paperheight=10in
+    - inner=0.85in
+    - outer=0.65in
+    - top=0.75in
+    - bottom=0.75in
+  colorlinks: true
+  linkcolor: blue
+  urlcolor: blue
+
+# Pandoc options
+pdf-engine: xelatex
+highlight-style: tango
+table-of-contents: true
+toc-depth: 2
+number-sections: false
+top-level-division: chapter
+standalone: true

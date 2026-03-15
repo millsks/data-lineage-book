@@ -1,0 +1,50 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+*.whl
+
+# pixi
+.pixi/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build artifacts
+build/
+
+# LaTeX intermediaries
+*.aux
+*.log
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Docker
+docker-compose.override.yml
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+mermaid-filter.err
