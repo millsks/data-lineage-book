@@ -38,22 +38,16 @@ All of those answers are metadata. And data lineage is one specific type of meta
 
 Most organizations vastly underestimate the volume and importance of metadata:
 
-```
-                    ┌─────────────────┐
-                    │   Visible Data  │  ← What users see in dashboards
-                    │   (the report)  │
-                ┌───┴─────────────────┴───┐
-                │    Schema Metadata      │  ← Column names, types, constraints
-            ┌───┴─────────────────────────┴───┐
-            │   Operational Metadata          │  ← Load times, row counts, job status
-        ┌───┴─────────────────────────────────┴───┐
-        │     Lineage Metadata                    │  ← How data flowed and transformed
-    ┌───┴─────────────────────────────────────────┴───┐
-    │       Business Metadata                         │  ← Definitions, owners, policies
-┌───┴─────────────────────────────────────────────────┴───┐
-│         Social / Usage Metadata                         │  ← Who queries it, popularity
-└─────────────────────────────────────────────────────────┘
-```
+| Layer (top → bottom) | What It Captures |
+|---|---|
+| **Visible Data** (the report) | What users see in dashboards |
+| **Schema Metadata** | Column names, types, constraints |
+| **Operational Metadata** | Load times, row counts, job status |
+| **Lineage Metadata** | How data flowed and transformed |
+| **Business Metadata** | Definitions, owners, policies |
+| **Social / Usage Metadata** | Who queries it, popularity |
+
+> Each layer below the surface supports the layers above it, forming a pyramid of increasing depth and context.
 
 ---
 

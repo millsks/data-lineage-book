@@ -29,6 +29,18 @@
   commandchars=\\\{\}
 }
 
+% Auto-shrink oversized code blocks (Shaded env) to fit text width
+\usepackage{adjustbox}
+\let\origShaded\Shaded
+\let\endorigShaded\endShaded
+\renewenvironment{Shaded}{%
+  \begin{adjustbox}{max width=\textwidth}%
+  \begin{origShaded}%
+}{%
+  \end{origShaded}%
+  \end{adjustbox}%
+}
+
 % Force a page break after the table of contents
 \usepackage{etoolbox}
 \apptocmd{\tableofcontents}{\clearpage}{}{}

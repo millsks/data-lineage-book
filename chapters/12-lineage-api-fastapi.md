@@ -77,24 +77,20 @@ graph LR
 
 ### Endpoint Summary
 
-```
-┌────────────┬──────────────────────────────┬──────────────────────┐
-│ Method     │ Endpoint                     │ Description          │
-├────────────┼──────────────────────────────┼──────────────────────┤
-│ GET        │ /api/v1/namespaces           │ List namespaces      │
-│ GET        │ /api/v1/datasets             │ List/search datasets │
-│ GET        │ /api/v1/datasets/{id}        │ Get dataset details  │
-│ GET        │ /api/v1/datasets/{id}/columns│ Get dataset columns  │
-│ GET        │ /api/v1/jobs                 │ List/search jobs     │
-│ GET        │ /api/v1/jobs/{id}            │ Get job details      │
-│ GET        │ /api/v1/jobs/{id}/runs       │ Get job run history  │
-│ GET        │ /api/v1/lineage              │ Get lineage graph    │
-│ GET        │ /api/v1/impact               │ Impact analysis      │
-│ POST       │ /api/v1/lineage/events       │ Ingest OL event      │
-│ GET        │ /api/v1/search               │ Full-text search     │
-│ GET        │ /api/v1/health               │ Health check         │
-└────────────┴──────────────────────────────┴──────────────────────┘
-```
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/v1/namespaces` | List namespaces |
+| GET | `/api/v1/datasets` | List/search datasets |
+| GET | `/api/v1/datasets/{id}` | Get dataset details |
+| GET | `/api/v1/datasets/{id}/columns` | Get dataset columns |
+| GET | `/api/v1/jobs` | List/search jobs |
+| GET | `/api/v1/jobs/{id}` | Get job details |
+| GET | `/api/v1/jobs/{id}/runs` | Get job run history |
+| GET | `/api/v1/lineage` | Get lineage graph |
+| GET | `/api/v1/impact` | Impact analysis |
+| POST | `/api/v1/lineage/events` | Ingest OL event |
+| GET | `/api/v1/search` | Full-text search |
+| GET | `/api/v1/health` | Health check |
 
 ---
 
@@ -106,7 +102,7 @@ from enum import Enum
 from pydantic import BaseModel, Field
 
 
-# ── Enums ──────────────────────────────────────────────────────
+# ── Enums ─────────────────────────────────────────
 
 class DatasetType(str, Enum):
     DB_TABLE = "DB_TABLE"
@@ -133,7 +129,7 @@ class NodeType(str, Enum):
     JOB = "JOB"
 
 
-# ── Core Models ────────────────────────────────────────────────
+# ── Core Models ───────────────────────────────────
 
 class ColumnSchema(BaseModel):
     name: str
@@ -174,7 +170,7 @@ class RunSummary(BaseModel):
     duration_ms: int | None = None
 
 
-# ── Lineage Graph Models ──────────────────────────────────────
+# ── Lineage Graph Models ──────────────────────────
 
 class LineageNode(BaseModel):
     """A node in the lineage graph (dataset or job)."""
@@ -200,7 +196,7 @@ class LineageGraph(BaseModel):
     root_node: str
 
 
-# ── Impact Analysis ───────────────────────────────────────────
+# ── Impact Analysis ───────────────────────────────
 
 class ImpactAnalysis(BaseModel):
     """Result of impact analysis on a dataset or column."""

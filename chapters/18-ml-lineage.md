@@ -77,18 +77,14 @@ graph LR
 
 ### ML Lineage Dimensions
 
-```
-┌───────────────────┬──────────────────────────────────────────────┐
-│ Dimension         │ What It Tracks                               │
-├───────────────────┼──────────────────────────────────────────────┤
-│ Data lineage      │ Raw data → cleaned data → feature tables     │
-│ Feature lineage   │ Which columns/transforms created each feature│
-│ Experiment lineage│ Hyperparameters, metrics, code version        │
-│ Model lineage     │ Training data + code + config → model artifact│
-│ Prediction lineage│ Model version + input features → prediction   │
-│ Deployment lineage│ Model version → endpoint → traffic split      │
-└───────────────────┴──────────────────────────────────────────────┘
-```
+| Dimension | What It Tracks |
+|---|---|
+| Data lineage | Raw data → cleaned data → feature tables |
+| Feature lineage | Which columns/transforms created each feature |
+| Experiment lineage | Hyperparameters, metrics, code version |
+| Model lineage | Training data + code + config → model artifact |
+| Prediction lineage | Model version + input features → prediction |
+| Deployment lineage | Model version → endpoint → traffic split |
 
 ---
 
