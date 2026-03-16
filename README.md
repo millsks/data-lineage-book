@@ -1,5 +1,7 @@
 # Data Lineage: From Novice to Expert
 
+<img src="./resources/book-cover-image.png" width="28%" />
+
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE-CODE)
 
