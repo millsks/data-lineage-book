@@ -26,3 +26,18 @@
 \apptocmd{\tableofcontents}{\clearpage}{}{}
 
 \raggedbottom
+
+% --- Cover page ---
+% Suppress Pandoc's auto-generated \maketitle (metadata is kept for PDF properties)
+\renewcommand{\maketitle}{}
+
+% Insert full-bleed cover image as the very first page
+\AtBeginDocument{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \newgeometry{margin=0pt}
+    \noindent
+    \includegraphics[width=\paperwidth, height=\paperheight]{resources/book-cover-image.png}
+    \restoregeometry
+  \end{titlepage}
+}
