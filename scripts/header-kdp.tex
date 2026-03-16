@@ -1,0 +1,36 @@
+% header-kdp.tex — LaTeX preamble for KDP print PDF (no cover image)
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Ensure chapter-opening pages (plain style) still show page numbers
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+\usepackage{enumitem}
+\setlistdepth{9}
+
+% Better code block formatting — smaller font, line breaking
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  fontsize=\footnotesize,
+  breaklines=true,
+  breakanywhere=true,
+  commandchars=\\\{\}
+}
+
+% Force a page break after the table of contents
+\usepackage{etoolbox}
+\apptocmd{\tableofcontents}{\clearpage}{}{}
+
+\raggedbottom

@@ -161,8 +161,8 @@ Not all lineage is created equal. Understanding the different dimensions helps y
 | Level | What It Tracks | Example |
 |-------|---------------|---------|
 | **System-level** | Data flow between systems | "Salesforce → Snowflake → Tableau" |
-| **Table-level** | Data flow between tables/datasets | "raw.orders → staging.stg_orders → marts.dim_orders" |
-| **Column-level** | Data flow between specific fields | "raw.orders.total_price → marts.dim_orders.revenue" |
+| **Table-level** | Data flow between tables/datasets | "raw.orders → stg_orders → dim_orders" |
+| **Column-level** | Data flow between specific fields | "orders.total_price → dim_orders.revenue" |
 | **Row-level** | Which specific rows contributed | "Row 42 in source → Row 17 in target" |
 | **Cell-level** | Individual value provenance | "This specific $500 came from invoice #1234" |
 

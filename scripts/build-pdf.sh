@@ -30,14 +30,15 @@ if [[ "${1:-}" == "--digital" ]]; then
   PDF_MODE="digital"
   METADATA="$SCRIPT_DIR/metadata-digital.yaml"
   OUTPUT="$BUILD_DIR/Data-Lineage-From-Novice-to-Expert-digital.pdf"
+  HEADER="$SCRIPT_DIR/header.tex"
 else
   PDF_MODE="kdp"
   METADATA="$SCRIPT_DIR/metadata.yaml"
   OUTPUT="$BUILD_DIR/Data-Lineage-From-Novice-to-Expert.pdf"
+  HEADER="$SCRIPT_DIR/header-kdp.tex"
 fi
 FILTER="$SCRIPT_DIR/filter-nav.lua"
 MERMAID_FILTER="$SCRIPT_DIR/mermaid-render.lua"
-HEADER="$SCRIPT_DIR/header.tex"
 
 # Chapter files in order
 CHAPTERS=(
