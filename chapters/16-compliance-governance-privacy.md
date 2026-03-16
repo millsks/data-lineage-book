@@ -54,30 +54,14 @@ graph TD
 
 ## 16.2 Key Regulations
 
-```
-┌────────────────┬────────────────────────┬──────────────────────────────────┐
-│ Regulation     │ Key Requirements       │ Lineage's Role                   │
-├────────────────┼────────────────────────┼──────────────────────────────────┤
-│ GDPR           │ Right to erasure,      │ Track PII flow, prove deletion   │
-│ (EU)           │ data portability,      │ across all copies, audit access   │
-│                │ lawful basis           │                                  │
-├────────────────┼────────────────────────┼──────────────────────────────────┤
-│ CCPA/CPRA      │ Right to know, right   │ Map data collection to           │
-│ (California)   │ to delete, opt-out     │ downstream uses, track opt-outs  │
-├────────────────┼────────────────────────┼──────────────────────────────────┤
-│ HIPAA          │ PHI (Protected Health  │ Track all PHI movement,          │
-│ (US Healthcare)│ Info) safeguards       │ access logging                   │
-├────────────────┼────────────────────────┼──────────────────────────────────┤
-│ SOX            │ Financial reporting    │ Prove data integrity from        │
-│ (US Financial) │ accuracy              │ source to financial report       │
-├────────────────┼────────────────────────┼──────────────────────────────────┤
-│ BCBS 239       │ Risk data aggregation  │ Trace risk metrics to source     │
-│ (Banking)      │ and reporting          │ systems                          │
-├────────────────┼────────────────────────┼──────────────────────────────────┤
-│ DORA           │ Digital operational    │ Map data dependencies for        │
-│ (EU Financial) │ resilience             │ incident response                │
-└────────────────┴────────────────────────┴──────────────────────────────────┘
-```
+| Regulation | Key Requirements | Lineage's Role |
+|---|---|---|
+| GDPR (EU) | Right to erasure, data portability, lawful basis | Track PII flow, prove deletion across all copies, audit access |
+| CCPA/CPRA (California) | Right to know, right to delete, opt-out | Map data collection to downstream uses, track opt-outs |
+| HIPAA (US Healthcare) | PHI (Protected Health Info) safeguards | Track all PHI movement, access logging |
+| SOX (US Financial) | Financial reporting accuracy | Prove data integrity from source to financial report |
+| BCBS 239 (Banking) | Risk data aggregation and reporting | Trace risk metrics to source systems |
+| DORA (EU Financial) | Digital operational resilience | Map data dependencies for incident response |
 
 ---
 
