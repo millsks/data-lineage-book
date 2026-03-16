@@ -145,18 +145,27 @@ jobs:
 
       # --- PDF build ---
 
-      - name: Build PDF
+      - name: Build PDF (KDP print)
         run: pixi run build-pdf
 
-      - name: Verify PDF
+      - name: Build PDF (Digital)
+        run: pixi run build-pdf-digital
+
+      - name: Verify PDFs
         run: |
-          PDF="build/Data-Lineage-From-Novice-to-Expert.pdf"
-          if [ ! -f "$PDF" ]; then
-            echo "❌ PDF build failed — file not found"
-            exit 1
-          fi
-          SIZE=$(du -h "$PDF" | cut -f1)
-          echo "✅ PDF built successfully: ${SIZE}"
+          FAIL=0
+          for PDF in \
+            "build/Data-Lineage-From-Novice-to-Expert.pdf" \
+            "build/Data-Lineage-From-Novice-to-Expert-digital.pdf"; do
+            if [ ! -f "$PDF" ]; then
+              echo "❌ PDF build failed — file not found: $PDF"
+              FAIL=1
+            else
+              SIZE=$(du -h "$PDF" | cut -f1)
+              echo "✅ $(basename "$PDF"): ${SIZE}"
+            fi
+          done
+          [ "$FAIL" -eq 0 ] || exit 1
 
       # --- GitHub Release ---
 
@@ -177,7 +186,9 @@ jobs:
                 echo ""
                 echo "---"
                 echo ""
-                echo "📖 **PDF book attached below** — ready for Amazon KDP upload."
+                echo "📖 **Two PDF editions attached:**"
+                echo "- **KDP Print** — twoside layout for Amazon KDP 7\"×10\" printing"
+                echo "- **Digital** — oneside layout for screen reading"
                 echo ""
                 echo "📝 **Full changelog**: [CHANGELOG.md](https://github.com/millsks/data-lineage-book/blob/main/CHANGELOG.md)"
                 echo "RELEASE_NOTES"
@@ -193,7 +204,9 @@ jobs:
                 echo "- Build date: $(date)"
                 echo "- Commit: ${{ github.sha }}"
                 echo ""
-                echo "📖 **PDF book attached below** — ready for Amazon KDP upload."
+                echo "📖 **Two PDF editions attached:**"
+                echo "- **KDP Print** — twoside layout for Amazon KDP 7\"×10\" printing"
+                echo "- **Digital** — oneside layout for screen reading"
                 echo "RELEASE_NOTES"
               } >> "$GITHUB_OUTPUT"
             fi
@@ -203,7 +216,9 @@ jobs:
               echo "notes<<RELEASE_NOTES"
               echo "Release v${VERSION}"
               echo ""
-              echo "📖 **PDF book attached below** — ready for Amazon KDP upload."
+              echo "📖 **Two PDF editions attached:**"
+              echo "- **KDP Print** — twoside layout for Amazon KDP 7\"×10\" printing"
+              echo "- **Digital** — oneside layout for screen reading"
               echo "RELEASE_NOTES"
             } >> "$GITHUB_OUTPUT"
           fi
@@ -216,12 +231,14 @@ jobs:
           body: ${{ steps.release_notes.outputs.notes }}
           draft: false
           prerelease: ${{ inputs.prerelease }}
-          files: build/Data-Lineage-From-Novice-to-Expert.pdf
+          files: |
+            build/Data-Lineage-From-Novice-to-Expert.pdf
+            build/Data-Lineage-From-Novice-to-Expert-digital.pdf
           token: ${{ steps.app-token.outputs.token }}
 
       - name: Release summary
         run: |
           echo "✅ Release v${{ env.NEW_TAG }} created successfully"
           echo "📋 CHANGELOG.md updated and committed"
-          echo "📖 PDF attached to release"
+          echo "📖 Both PDFs (KDP print + digital) attached to release"
           echo "🔗 https://github.com/millsks/data-lineage-book/releases/tag/v${{ env.NEW_TAG }}"

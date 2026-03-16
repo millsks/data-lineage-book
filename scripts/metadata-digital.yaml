@@ -1,5 +1,5 @@
-# Pandoc defaults file for KDP PDF build
-# Usage: pandoc --defaults=scripts/metadata.yaml ...
+# Pandoc defaults file for Digital/Screen PDF build (oneside)
+# Usage: pandoc --defaults=scripts/metadata-digital.yaml ...
 
 # Metadata variables
 metadata:
@@ -11,6 +11,7 @@ metadata:
   documentclass: book
   classoption:
     - openany
+    - oneside
     - 11pt
   fontsize: 11pt
   mainfont: "Palatino"
@@ -19,8 +20,8 @@ metadata:
   geometry:
     - paperwidth=7in
     - paperheight=10in
-    - inner=0.75in
-    - outer=0.5in
+    - left=0.75in
+    - right=0.75in
     - top=0.75in
     - bottom=0.75in
     - headheight=14pt
