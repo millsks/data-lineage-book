@@ -13,7 +13,7 @@
 #   eval "$(/usr/libexec/path_helper)"
 #   sudo tlmgr update --self
 #   sudo tlmgr install collection-fontsrecommended fancyhdr titlesec \
-#        enumitem booktabs longtable xcolor dejavu
+#        enumitem booktabs longtable xcolor dejavu adjustbox
 #
 # Optional (for Mermaid diagram rendering):
 #   npm install -g @mermaid-js/mermaid-cli
