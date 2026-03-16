@@ -9,6 +9,14 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 
+% Ensure chapter-opening pages (plain style) still show page numbers
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
 \usepackage{enumitem}
 \setlistdepth{9}
 
@@ -33,11 +41,11 @@
 
 % Insert full-bleed cover image as the very first page
 \AtBeginDocument{%
+  \newgeometry{margin=0pt}
   \begin{titlepage}
     \thispagestyle{empty}
-    \newgeometry{margin=0pt}
     \noindent
     \includegraphics[width=\paperwidth, height=\paperheight]{resources/book-cover-image.png}
-    \restoregeometry
   \end{titlepage}
+  \restoregeometry
 }
