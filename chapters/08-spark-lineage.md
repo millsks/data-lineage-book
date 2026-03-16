@@ -143,19 +143,24 @@ Output (simplified):
 
 ```
 == Parsed Logical Plan ==
-'Aggregate ['customer_id, 'name], ['customer_id, 'name, sum('total), count('order_id)]
+'Aggregate ['customer_id, 'name],
+    [sum('total), count('order_id)]
 +- 'Filter ('status = completed)
    +- 'Join Inner, ('customer_id = 'customer_id)
       :- 'Relation [customers.parquet]
       +- 'Relation [orders.parquet]
 
 == Optimized Logical Plan ==
-Aggregate [customer_id, name], [customer_id, name, sum(total), count(order_id)]
+Aggregate [customer_id, name],
+    [sum(total), count(order_id)]
 +- Join Inner, (customer_id = customer_id)
    :- Filter (isnotnull(customer_id))
-   :  +- Relation [customers.parquet] [customer_id, name, email, ...]
-   +- Filter ((status = completed) AND isnotnull(customer_id))
-      +- Relation [orders.parquet] [order_id, customer_id, total, status, ...]
+   :  +- Relation [customers.parquet]
+   :       [customer_id, name, email]
+   +- Filter (status = completed
+   :    AND isnotnull(customer_id))
+      +- Relation [orders.parquet]
+           [order_id, customer_id, total]
 ```
 
 ### Plan → Lineage Mapping
