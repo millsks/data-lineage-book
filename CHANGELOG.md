@@ -7,9 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.4.0] - 2026-03-16
 
+### ⚙️ Miscellaneous Tasks
+
+- **release**: Update changelog for v0.4.0
+
+### ⭐ Features
+
+- Enhance PDF generation with digital format and improved metadata
+
 ### 🐛 Bug Fixes
 
 - Update table formatting and adjust margins across multiple chapters
+- Update build script and header for PDF generation
 
 ## [0.3.0] - 2026-03-16
 
