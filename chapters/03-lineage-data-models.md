@@ -55,10 +55,10 @@ Most lineage graphs are modeled as **Directed Acyclic Graphs (DAGs)**: graphs wh
 
 | Property | Meaning | Lineage Implication |
 |----------|---------|-------------------|
-| **Directed** | Edges go from A → B, not both ways | Data flows in a specific direction |
+| **Directed** | Edges go from A → B, not both ways | Data flows in one direction |
 | **Acyclic** | No path leads back to its start | No infinite loops in data flow |
-| **Topological ordering** | Nodes can be sorted so that for every edge A → B, A comes before B | Processing order for migrations and impact analysis |
-| **Multiple roots** | Can have multiple source nodes | Multiple independent source systems |
+| **Topological ordering** | Nodes sortable so A comes before B for every edge A → B | Processing order for impact analysis |
+| **Multiple roots** | Can have multiple source nodes | Multiple source systems |
 | **Multiple sinks** | Can have multiple terminal nodes | Multiple dashboards, reports, models |
 
 ### DAG Example

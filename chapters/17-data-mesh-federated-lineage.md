@@ -218,25 +218,13 @@ graph TD
 
 ### Challenges
 
-```
-┌──────────────────────┬──────────────────────────────────────────┐
-│ Challenge            │ Description                              │
-├──────────────────────┼──────────────────────────────────────────┤
-│ Namespace conflicts  │ Two domains may use the same dataset     │
-│                      │ name (e.g., "customers")                 │
-├──────────────────────┼──────────────────────────────────────────┤
-│ Cross-domain joins   │ Lineage must stitch graphs at domain     │
-│                      │ boundaries                               │
-├──────────────────────┼──────────────────────────────────────────┤
-│ Schema versioning    │ Each domain evolves schemas independently│
-├──────────────────────┼──────────────────────────────────────────┤
-│ Trust boundaries     │ Not all lineage should be visible        │
-│                      │ across domains                           │
-├──────────────────────┼──────────────────────────────────────────┤
-│ Eventual consistency │ Domain lineage may update at different   │
-│                      │ rates                                    │
-└──────────────────────┴──────────────────────────────────────────┘
-```
+| Challenge | Description |
+|---|---|
+| Namespace conflicts | Two domains may use the same dataset name (e.g., "customers") |
+| Cross-domain joins | Lineage must stitch graphs at domain boundaries |
+| Schema versioning | Each domain evolves schemas independently |
+| Trust boundaries | Not all lineage should be visible across domains |
+| Eventual consistency | Domain lineage may update at different rates |
 
 ---
 

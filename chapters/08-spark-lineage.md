@@ -26,21 +26,15 @@ Apache Spark processes massive datasets across distributed clusters. Unlike simp
 
 ### Spark vs. SQL-Only Lineage
 
-```
-┌─────────────────────┬──────────────────────┬───────────────────────┐
-│ Aspect              │ SQL Lineage          │ Spark Lineage         │
-├─────────────────────┼──────────────────────┼───────────────────────┤
-│ Input format        │ SQL text             │ Code + SQL + API      │
-│ Parsing approach    │ Static AST parsing   │ Runtime plan capture  │
-│ Data sources        │ Tables only          │ Files, APIs, tables,  │
-│                     │                      │ streams, custom       │
-│ Transformations     │ SQL operations       │ SQL + DataFrame API   │
-│                     │                      │ + RDD + UDFs          │
-│ Scale               │ Single query         │ Multi-stage pipeline  │
-│ Column tracking     │ From SQL             │ From optimized plan   │
-│ UDF handling        │ Opaque              │ Opaque (same limit)   │
-└─────────────────────┴──────────────────────┴───────────────────────┘
-```
+| Aspect | SQL Lineage | Spark Lineage |
+|---|---|---|
+| Input format | SQL text | Code + SQL + API |
+| Parsing approach | Static AST parsing | Runtime plan capture |
+| Data sources | Tables only | Files, APIs, tables, streams, custom |
+| Transformations | SQL operations | SQL + DataFrame API + RDD + UDFs |
+| Scale | Single query | Multi-stage pipeline |
+| Column tracking | From SQL | From optimized plan |
+| UDF handling | Opaque | Opaque (same limit) |
 
 ### The Spark Lineage Advantage
 
@@ -265,23 +259,19 @@ spark-submit \
 
 ### Supported Data Sources
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│          OPENLINEAGE SPARK: SUPPORTED SOURCES                   │
-├────────────────────┬──────────────┬─────────────────────────────┤
-│ Source Type        │ Support      │ Details                     │
-├────────────────────┼──────────────┼─────────────────────────────┤
-│ Parquet            │ ✅ Full      │ Schema + row count          │
-│ Delta Lake         │ ✅ Full      │ Schema + version tracking   │
-│ Iceberg            │ ✅ Full      │ Schema + snapshot lineage   │
-│ CSV / JSON         │ ✅ Basic     │ Schema when available       │
-│ JDBC               │ ✅ Full      │ Table name + schema         │
-│ Hive tables        │ ✅ Full      │ Metastore integration       │
-│ Kafka              │ ✅ Full      │ Topic + schema              │
-│ S3 / GCS / ADLS    │ ✅ Full      │ Path-based dataset names    │
-│ Custom sources     │ ⚠️ Partial   │ Dependent on V2 Data Source │
-└────────────────────┴──────────────┴─────────────────────────────┘
-```
+**OpenLineage Spark: Supported Sources**
+
+| Source Type | Support | Details |
+|---|---|---|
+| Parquet | Full | Schema + row count |
+| Delta Lake | Full | Schema + version tracking |
+| Iceberg | Full | Schema + snapshot lineage |
+| CSV / JSON | Basic | Schema when available |
+| JDBC | Full | Table name + schema |
+| Hive tables | Full | Metastore integration |
+| Kafka | Full | Topic + schema |
+| S3 / GCS / ADLS | Full | Path-based dataset names |
+| Custom sources | Partial | Dependent on V2 Data Source |
 
 ---
 
@@ -308,12 +298,12 @@ spark = (
     .getOrCreate()
 )
 
-# ── Step 1: Read source data ──────────────────────────────────
+# ── Step 1: Read source data ──────────────────────
 customers = spark.read.parquet("/data/raw/customers/")
 orders = spark.read.parquet("/data/raw/orders/")
 products = spark.read.parquet("/data/raw/products/")
 
-# ── Step 2: Join and transform ────────────────────────────────
+# ── Step 2: Join and transform ─────────────────────
 order_details = (
     orders
     .join(customers, "customer_id")
@@ -332,7 +322,7 @@ order_details = (
     )
 )
 
-# ── Step 3: Aggregate customer metrics ────────────────────────
+# ── Step 3: Aggregate customer metrics ────────────
 customer_metrics = (
     order_details
     .groupBy("customer_id", "customer_name")
@@ -345,8 +335,10 @@ customer_metrics = (
     )
 )
 
-# ── Step 4: Write output ──────────────────────────────────────
-customer_metrics.write.mode("overwrite").parquet("/data/curated/customer_metrics/")
+# ── Step 4: Write output ──────────────────────────
+customer_metrics.write.mode("overwrite").parquet(
+    "/data/curated/customer_metrics/"
+)
 
 spark.stop()
 ```

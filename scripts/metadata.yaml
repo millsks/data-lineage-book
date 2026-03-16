@@ -19,10 +19,10 @@ metadata:
   geometry:
     - paperwidth=7in
     - paperheight=10in
-    - inner=0.85in
-    - outer=0.65in
-    - top=0.75in
-    - bottom=0.75in
+    - inner=0.625in
+    - outer=0.25in
+    - top=0.25in
+    - bottom=0.25in
   colorlinks: true
   linkcolor: blue
   urlcolor: blue
