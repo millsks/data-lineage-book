@@ -4,7 +4,8 @@
 # "Data Lineage: From Novice to Expert"
 #
 # Usage:
-#   bash scripts/build-pdf.sh
+#   bash scripts/build-pdf.sh            # KDP twoside print layout
+#   bash scripts/build-pdf.sh --digital   # Oneside digital/screen layout
 #
 # Prerequisites:
 #   brew install pandoc
@@ -23,8 +24,17 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 BUILD_DIR="$ROOT_DIR/build"
-OUTPUT="$BUILD_DIR/Data-Lineage-From-Novice-to-Expert.pdf"
-METADATA="$SCRIPT_DIR/metadata.yaml"
+
+# Select PDF mode: KDP print (twoside) or digital (oneside)
+if [[ "${1:-}" == "--digital" ]]; then
+  PDF_MODE="digital"
+  METADATA="$SCRIPT_DIR/metadata-digital.yaml"
+  OUTPUT="$BUILD_DIR/Data-Lineage-From-Novice-to-Expert-digital.pdf"
+else
+  PDF_MODE="kdp"
+  METADATA="$SCRIPT_DIR/metadata.yaml"
+  OUTPUT="$BUILD_DIR/Data-Lineage-From-Novice-to-Expert.pdf"
+fi
 FILTER="$SCRIPT_DIR/filter-nav.lua"
 MERMAID_FILTER="$SCRIPT_DIR/mermaid-render.lua"
 HEADER="$SCRIPT_DIR/header.tex"
@@ -75,7 +85,7 @@ done
 # Create build directory
 mkdir -p "$BUILD_DIR"
 
-echo "=== Building PDF ==="
+echo "=== Building PDF ($PDF_MODE) ==="
 echo "  Output: $OUTPUT"
 echo "  Chapters: ${#CHAPTERS[@]}"
 echo ""
