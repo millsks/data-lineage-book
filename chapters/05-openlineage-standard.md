@@ -28,9 +28,10 @@ Before OpenLineage, every tool had its own lineage format. Kedro emitted lineage
 ```mermaid
 graph TD
     subgraph "Before OpenLineage"
-        A1["Airflow<br/>Custom Format A"] --> G1["Glue Code"]
-        S1["Spark<br/>Custom Format B"] --> G1
-        D1["dbt<br/>Custom Format C"] --> G1
+        K1["Kedro<br/>Custom Format A"] --> G1["Glue Code"]
+        A1["Airflow<br/>Custom Format B"] --> G1
+        S1["Spark<br/>Custom Format C"] --> G1
+        D1["dbt<br/>Custom Format D"] --> G1
         G1 --> L1["Lineage Store"]
     end
 ```
@@ -38,7 +39,8 @@ graph TD
 ```mermaid
 graph TD
     subgraph "With OpenLineage"
-        A2["Airflow<br/>OpenLineage Events"] --> L2["Lineage Store<br/>(Marquez, DataHub, etc.)"]
+        K2["Kedro<br/>OpenLineage Events"] --> L2["Lineage Store<br/>(Marquez, DataHub, etc.)"]
+        A2["Airflow<br/>OpenLineage Events"] --> L2
         S2["Spark<br/>OpenLineage Events"] --> L2
         D2["dbt<br/>OpenLineage Events"] --> L2
     end
@@ -65,11 +67,12 @@ The OpenLineage architecture follows a **producer → transport → consumer** p
 ```mermaid
 graph LR
     subgraph "Producers"
-        P1["Airflow"]
-        P2["Spark"]
-        P3["dbt"]
-        P4["Flink"]
-        P5["Custom App"]
+        P1["Kedro"]
+        P2["Airflow"]
+        P3["Spark"]
+        P4["dbt"]
+        P5["Flink"]
+        P6["Custom App"]
     end
 
     subgraph "Transports"
@@ -506,7 +509,8 @@ OpenLineage has a broad ecosystem of integrations:
 
 ```mermaid
 graph TD
-    subgraph "Orchestrators"
+    subgraph "Pipeline Frameworks"
+        KDR["Kedro"]
         AIR["Apache Airflow"]
         DAG["Dagster"]
     end
@@ -524,6 +528,7 @@ graph TD
 
     OL["OpenLineage<br/>Standard"]
 
+    KDR -->|"kedro-openlineage"| OL
     AIR -->|"airflow-provider-openlineage"| OL
     DAG -->|"dagster-openlineage"| OL
     SPK -->|"openlineage-spark"| OL

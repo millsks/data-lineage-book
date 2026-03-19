@@ -182,11 +182,11 @@ def build_ecommerce_lineage() -> nx.DiGraph:
                 owner="Finance Team")
 
     # --- Extract jobs ---
-    add_job(g, "extract_orders", namespace="airflow://prod",
+    add_job(g, "extract_orders", namespace="kedro://prod",
             description="Extract orders from PostgreSQL to staging")
-    add_job(g, "extract_customers", namespace="airflow://prod",
+    add_job(g, "extract_customers", namespace="kedro://prod",
             description="Extract customers from PostgreSQL to staging")
-    add_job(g, "fetch_rates", namespace="airflow://prod",
+    add_job(g, "fetch_rates", namespace="kedro://prod",
             description="Fetch exchange rates from forex API")
 
     # --- Staging datasets ---
