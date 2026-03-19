@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.7.0] - 2026-03-19
 
+### ⚙️ Miscellaneous Tasks
+
+- **release**: Update changelog for v0.7.0
+
 ### ⭐ Features
 
 - Implement Mini Lineage Platform with FastAPI
@@ -15,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update pixi package manager version in README and index files
 - Update data processing tool references to include Kedro in README and index files
+- Update chapter order in PDF build script to include Kedro lineage chapter
 
 ## [0.6.0] - 2026-03-16
 
