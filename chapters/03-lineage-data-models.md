@@ -202,7 +202,7 @@ graph LR
     OP --> C3
 ```
 
-Column-level edges detail is explored in depth in [Chapter 10](10-column-level-lineage.md).
+Column-level edges detail is explored in depth in [Chapter 11](11-column-level-lineage.md).
 
 ### Transformation Semantics
 
@@ -633,7 +633,7 @@ MATCH (j:Job {name: 'etl.load_orders'}), (d:Dataset {name: 'staging.stg_orders'}
 CREATE (j)-[:PRODUCES]->(d)
 ```
 
-We explore graph databases for lineage in [Chapter 11](11-graph-databases-lineage.md).
+We explore graph databases for lineage in [Chapter 12](12-graph-databases-lineage.md).
 
 ---
 

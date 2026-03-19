@@ -36,11 +36,11 @@ All exercises live in the [`exercises/`](exercises/) directory with setup instru
 | Part | Chapters | Topics |
 |------|----------|--------|
 | **I — Foundations** | 1–4 | Definitions, metadata, data models, first lineage graph |
-| **II — Open-Source Tooling** | 5–9 | OpenLineage, SQL parsing, Airflow, Spark, dbt |
-| **III — Advanced Techniques** | 10–12 | Column-level lineage, graph databases, Lineage API |
-| **IV — Governance & Quality** | 13–17 | Data quality, observability, streaming, compliance, data mesh |
-| **V — AI & Data Lineage** | 18–19 | ML/MLOps lineage, GenAI & LLM lineage |
-| **VI — Putting It All Together** | 20–21 | Lineage at scale, capstone project |
+| **II — Open-Source Tooling** | 5–10 | OpenLineage, SQL parsing, Kedro, Airflow, Spark, dbt |
+| **III — Advanced Techniques** | 11–13 | Column-level lineage, graph databases, Lineage API |
+| **IV — Governance & Quality** | 14–18 | Data quality, observability, streaming, compliance, data mesh |
+| **V — AI & Data Lineage** | 19–20 | ML/MLOps lineage, GenAI & LLM lineage |
+| **VI — Putting It All Together** | 21–22 | Lineage at scale, capstone project |
 
 ## License
 
