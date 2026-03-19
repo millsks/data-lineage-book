@@ -23,7 +23,7 @@ Each chapter is self-contained but builds on prior material. Chapters include ex
 
 - Intermediate Python (comfortable with classes, decorators, async)
 - Basic SQL knowledge
-- Familiarity with at least one data processing tool (Spark, Airflow, dbt, or similar)
+- Familiarity with at least one data processing tool — [Kedro](https://kedro.org/) is the primary tool used in this book, with additional coverage of Spark, Airflow, and dbt
 - [pixi](https://pixi.sh) package manager installed (v0.65 or later)
 - Docker installed for exercises requiring Marquez, Neo4j, or Kafka
 

@@ -27,7 +27,7 @@ All exercises live in the [`exercises/`](exercises/) directory with setup instru
 
 - **Python 3.10+** (3.12 recommended)
 - **Basic SQL** knowledge
-- Familiarity with at least one data processing tool (Spark, Airflow, dbt, or similar)
+- Familiarity with at least one data processing tool — [**Kedro**](https://kedro.org/) is the primary tool used in this book, with additional coverage of Spark, Airflow, and dbt
 - [**pixi**](https://pixi.sh) package manager (v0.65+) for environment management
 - **Docker** for exercises requiring Marquez, Neo4j, or Kafka
 
