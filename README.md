@@ -28,7 +28,7 @@ All exercises live in the [`exercises/`](exercises/) directory with setup instru
 - **Python 3.10+** (3.12 recommended)
 - **Basic SQL** knowledge
 - Familiarity with at least one data processing tool (Spark, Airflow, dbt, or similar)
-- [**pixi**](https://pixi.sh) package manager (v0.20.0+) for environment management
+- [**pixi**](https://pixi.sh) package manager (v0.65+) for environment management
 - **Docker** for exercises requiring Marquez, Neo4j, or Kafka
 
 ## Book Structure
