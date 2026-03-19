@@ -214,15 +214,15 @@ Lineage enriches a catalog by showing how assets are connected. A catalog withou
 
 ### Lineage vs. Data Pipeline Orchestration
 
-**Orchestration tools** (Airflow, Dagster, Prefect) manage the execution order of data tasks. They define the **operational DAG**, which determines which jobs run before which other jobs. Lineage captures the **data DAG**, which tracks which datasets flow into which other datasets.
+**Pipeline frameworks** (Kedro, Airflow, Dagster, Prefect) manage the execution order of data tasks. They define the **operational DAG**, which determines which nodes run before which other nodes. Lineage captures the **data DAG**, which tracks which datasets flow into which other datasets.
 
 These often overlap but are not the same:
 
 ```mermaid
 graph TD
-    subgraph "Orchestration DAG (Airflow)"
-        T1["Task: extract"] --> T2["Task: transform"]
-        T2 --> T3["Task: load"]
+    subgraph "Pipeline DAG (Kedro)"
+        T1["Node: extract"] --> T2["Node: transform"]
+        T2 --> T3["Node: load"]
     end
     subgraph "Lineage DAG (Data Flow)"
         D1["Source: postgres.orders"] --> D2["Staging: stg_orders"]
@@ -230,7 +230,7 @@ graph TD
     end
 ```
 
-A single orchestration task may read from 5 tables and write to 3, so the lineage is richer than the task dependency graph.
+A single pipeline node may read from 5 datasets and write to 3, so the lineage is richer than the node dependency graph.
 
 ### Lineage vs. Version Control
 

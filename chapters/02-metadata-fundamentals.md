@@ -221,7 +221,7 @@ The [W3C PROV](https://www.w3.org/TR/prov-overview/) family of specifications de
 graph LR
     E1["Entity:<br/>raw_orders"] -->|"used"| A["Activity:<br/>transform_orders"]
     A -->|"wasGeneratedBy"| E2["Entity:<br/>clean_orders"]
-    AG["Agent:<br/>Airflow"] -->|"wasAssociatedWith"| A
+    AG["Agent:<br/>Kedro"] -->|"wasAssociatedWith"| A
 ```
 
 The W3C PROV model is the conceptual ancestor of modern lineage systems like OpenLineage.

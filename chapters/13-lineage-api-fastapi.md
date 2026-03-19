@@ -27,10 +27,11 @@ A lineage API decouples lineage **producers** (Kedro, Airflow, Spark, dbt) from 
 ```mermaid
 graph TD
     subgraph "Producers"
-        P1["Airflow"]
-        P2["Spark"]
-        P3["dbt"]
-        P4["Custom Scripts"]
+        P1["Kedro"]
+        P2["Airflow"]
+        P3["Spark"]
+        P4["dbt"]
+        P5["Custom Scripts"]
     end
 
     API["Lineage API<br/>(FastAPI)"]
@@ -47,6 +48,7 @@ graph TD
     P2 --> API
     P3 --> API
     P4 --> API
+    P5 --> API
     API --> C1
     API --> C2
     API --> C3
@@ -553,10 +555,10 @@ def test_app():
         namespace="postgres", name="staging.stg_customers", type=DatasetType.DB_TABLE,
     ))
     store.add_job(JobSummary(
-        namespace="airflow", name="clean_customers", type=JobType.BATCH,
+        namespace="kedro", name="clean_customers", type=JobType.BATCH,
     ))
-    store.add_edge("postgres:raw.customers", "airflow:clean_customers")
-    store.add_edge("airflow:clean_customers", "postgres:staging.stg_customers")
+    store.add_edge("postgres:raw.customers", "kedro:clean_customers")
+    store.add_edge("kedro:clean_customers", "postgres:staging.stg_customers")
     return app
 
 
