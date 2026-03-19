@@ -93,8 +93,8 @@ print(f"NetworkX version: {nx.__version__}")
 
 > **Note**: NetworkX is great for learning and small-to-medium graphs. For
 > production systems with millions of nodes, consider Neo4j
-> ([Chapter 11](11-graph-databases-lineage.md)) or a purpose-built lineage
-> server like Marquez ([Chapter 7](07-airflow-and-marquez.md)).
+> ([Chapter 12](12-graph-databases-lineage.md)) or a purpose-built lineage
+> server like Marquez ([Chapter 8](08-airflow-and-marquez.md)).
 
 ---
 

@@ -131,11 +131,11 @@ Regulations like **GDPR**, **CCPA**, **SOX**, and **HIPAA** require organization
 - Demonstrate that data hasn't been tampered with (integrity)
 - Delete personal data upon request across all systems (right to erasure)
 
-Lineage makes compliance demonstrable rather than aspirational. We cover this in depth in [Chapter 16](16-compliance-governance-privacy.md).
+Lineage makes compliance demonstrable rather than aspirational. We cover this in depth in [Chapter 17](17-compliance-governance-privacy.md).
 
 ### 1.3.5 Data Quality Propagation
 
-Once you know the lineage graph, you can propagate quality signals through it. If an upstream source fails a quality check, you can automatically flag or pause all downstream consumers. This is explored in [Chapter 13](13-data-quality-lineage.md).
+Once you know the lineage graph, you can propagate quality signals through it. If an upstream source fails a quality check, you can automatically flag or pause all downstream consumers. This is explored in [Chapter 14](14-data-quality-lineage.md).
 
 ### 1.3.6 Migration and Modernization
 
@@ -166,7 +166,7 @@ Not all lineage is created equal. Understanding the different dimensions helps y
 | **Row-level** | Which specific rows contributed | "Row 42 in source → Row 17 in target" |
 | **Cell-level** | Individual value provenance | "This specific $500 came from invoice #1234" |
 
-Most organizations operate at **table-level** lineage and aspire to **column-level**. Row-level and cell-level are rare and typically only used in auditing or highly regulated environments. Column-level lineage is the focus of [Chapter 10](10-column-level-lineage.md).
+Most organizations operate at **table-level** lineage and aspire to **column-level**. Row-level and cell-level are rare and typically only used in auditing or highly regulated environments. Column-level lineage is the focus of [Chapter 11](11-column-level-lineage.md).
 
 ### By Collection Method
 
@@ -347,7 +347,7 @@ Data catalogs (Alation, Collibra, Apache Atlas) introduced **automated lineage**
 The emergence of **OpenLineage** (2021) marked a turning point:
 
 - A vendor-neutral, open standard for lineage events
-- Ecosystem of integrations (Airflow, Spark, dbt, Flink)
+- Ecosystem of integrations (Kedro, Airflow, Spark, dbt, Flink)
 - Separation of lineage *collection* from lineage *storage*
 - Rise of composable data platforms where lineage flows across tools
 
@@ -360,7 +360,7 @@ The latest evolution ties lineage to AI/ML:
 - **Automated lineage enrichment**: Using LLMs to generate descriptions from lineage graphs
 - **Lineage as a service**: Cloud-native lineage infrastructure
 
-We explore the AI dimension in [Chapter 18](18-ml-lineage.md) and [Chapter 19](19-genai-llm-lineage.md).
+We explore the AI dimension in [Chapter 19](19-ml-lineage.md) and [Chapter 20](20-genai-llm-lineage.md).
 
 ---
 

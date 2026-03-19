@@ -22,7 +22,7 @@
 
 ## 6.1 Why Parse SQL for Lineage?
 
-SQL is the dominant language for data transformation. Most data pipelines (whether in Spark, dbt, Airflow, or plain scripts) ultimately execute SQL. Parsing SQL lets you extract lineage **without running the query**.
+SQL is the dominant language for data transformation. Most data pipelines (whether in Kedro, Spark, dbt, Airflow, or plain scripts) ultimately execute SQL. Parsing SQL lets you extract lineage **without running the query**.
 
 ```mermaid
 graph LR
@@ -680,8 +680,8 @@ In this chapter, you learned:
 
 ### What's Next
 
-In [Chapter 7: Apache Airflow & Marquez](07-airflow-and-marquez.md), we connect Airflow to OpenLineage for runtime lineage capture, and explore Marquez as a lineage metadata server.
+In [Chapter 8: Apache Airflow & Marquez](08-airflow-and-marquez.md), we connect Airflow to OpenLineage for runtime lineage capture, and explore Marquez as a lineage metadata server.
 
 ---
 
-[&larr; Back to Index](../index.md) | [Previous: Chapter 5](05-openlineage-standard.md) | [Next: Chapter 7 &rarr;](07-airflow-and-marquez.md)
+[&larr; Back to Index](../index.md) | [Previous: Chapter 5](05-openlineage-standard.md) | [Next: Chapter 7 &rarr;](07-kedro-lineage.md)

@@ -23,8 +23,8 @@ Each chapter is self-contained but builds on prior material. Chapters include ex
 
 - Intermediate Python (comfortable with classes, decorators, async)
 - Basic SQL knowledge
-- Familiarity with at least one data processing tool (Spark, Airflow, dbt, or similar)
-- [pixi](https://pixi.sh) package manager installed (v0.20.0 or later)
+- Familiarity with at least one data processing tool — [Kedro](https://kedro.org/) is the primary tool used in this book, with additional coverage of Spark, Airflow, and dbt
+- [pixi](https://pixi.sh) package manager installed (v0.65 or later)
 - Docker installed for exercises requiring Marquez, Neo4j, or Kafka
 
 ### How to Use the Exercises
@@ -55,41 +55,42 @@ All exercises live in the [`exercises/`](exercises/) directory. See the [exercis
 |---------|-------|-------------|
 | 5 | [The OpenLineage Standard](chapters/05-openlineage-standard.md) | Spec deep-dive: RunEvent, Job, Dataset, facets, transports, ecosystem |
 | 6 | [SQL Lineage Parsing](chapters/06-sql-lineage-parsing.md) | Extracting lineage from SQL with `sqllineage`, handling CTEs and subqueries |
-| 7 | [Apache Airflow & Marquez](chapters/07-airflow-and-marquez.md) | Airflow's lineage model, OpenLineage integration, Marquez as a lineage server |
-| 8 | [Apache Spark Lineage](chapters/08-spark-lineage.md) | Spark query plans as lineage, PySpark + OpenLineage integration |
-| 9 | [dbt Lineage](chapters/09-dbt-lineage.md) | manifest.json, catalog.json, sources/models/exposures, OpenLineage dbt integration |
+| 7 | [Kedro Lineage](chapters/07-kedro-lineage.md) | Kedro Data Catalog, pipeline nodes, Kedro-Viz, OpenLineage integration |
+| 8 | [Apache Airflow & Marquez](chapters/08-airflow-and-marquez.md) | Airflow's lineage model, OpenLineage integration, Marquez as a lineage server |
+| 9 | [Apache Spark Lineage](chapters/09-spark-lineage.md) | Spark query plans as lineage, PySpark + OpenLineage integration |
+| 10 | [dbt Lineage](chapters/10-dbt-lineage.md) | manifest.json, catalog.json, sources/models/exposures, OpenLineage dbt integration |
 
 ### Part III — Advanced Lineage Techniques
 
 | Chapter | Title | Description |
 |---------|-------|-------------|
-| 10 | [Column-Level Lineage Deep Dive](chapters/10-column-level-lineage.md) | Why table-level is insufficient, static analysis, runtime instrumentation, tooling |
-| 11 | [Graph Databases for Lineage](chapters/11-graph-databases-lineage.md) | Neo4j, Cypher, property graph modeling, cloud graph options |
-| 12 | [Building a Lineage API with FastAPI](chapters/12-lineage-api-fastapi.md) | REST API design for lineage queries, traversal, pagination, caching |
+| 11 | [Column-Level Lineage Deep Dive](chapters/11-column-level-lineage.md) | Why table-level is insufficient, static analysis, runtime instrumentation, tooling |
+| 12 | [Graph Databases for Lineage](chapters/12-graph-databases-lineage.md) | Neo4j, Cypher, property graph modeling, cloud graph options |
+| 13 | [Building a Lineage API with FastAPI](chapters/13-lineage-api-fastapi.md) | REST API design for lineage queries, traversal, pagination, caching |
 
 ### Part IV — Governance, Compliance & Quality
 
 | Chapter | Title | Description |
 |---------|-------|-------------|
-| 13 | [Data Quality and Lineage](chapters/13-data-quality-lineage.md) | Quality propagation, Great Expectations integration, data contracts, SLA tracking |
-| 14 | [Data Observability](chapters/14-data-observability.md) | Freshness, volume, schema drift, anomaly detection, blast-radius alerting |
-| 15 | [Streaming & Real-Time Lineage](chapters/15-streaming-lineage.md) | Kafka, Flink, Spark Structured Streaming, OpenLineage streaming facets |
-| 16 | [Compliance, Governance & Privacy](chapters/16-compliance-governance-privacy.md) | GDPR, CCPA, SOX, HIPAA: lineage for audit trails and PII tracking |
-| 17 | [Data Mesh & Federated Lineage](chapters/17-data-mesh-federated-lineage.md) | Domain-oriented ownership, federated governance, cross-domain lineage |
+| 14 | [Data Quality and Lineage](chapters/14-data-quality-lineage.md) | Quality propagation, Great Expectations integration, data contracts, SLA tracking |
+| 15 | [Data Observability](chapters/15-data-observability.md) | Freshness, volume, schema drift, anomaly detection, blast-radius alerting |
+| 16 | [Streaming & Real-Time Lineage](chapters/16-streaming-lineage.md) | Kafka, Flink, Spark Structured Streaming, OpenLineage streaming facets |
+| 17 | [Compliance, Governance & Privacy](chapters/17-compliance-governance-privacy.md) | GDPR, CCPA, SOX, HIPAA: lineage for audit trails and PII tracking |
+| 18 | [Data Mesh & Federated Lineage](chapters/18-data-mesh-federated-lineage.md) | Domain-oriented ownership, federated governance, cross-domain lineage |
 
 ### Part V — AI & Data Lineage
 
 | Chapter | Title | Description |
 |---------|-------|-------------|
-| 18 | [ML & MLOps Lineage](chapters/18-ml-lineage.md) | Training data provenance, feature stores, experiment tracking, model cards |
-| 19 | [GenAI & LLM Lineage](chapters/19-genai-llm-lineage.md) | RAG pipeline lineage, prompt tracing, fine-tuning provenance, emerging standards |
+| 19 | [ML & MLOps Lineage](chapters/19-ml-lineage.md) | Training data provenance, feature stores, experiment tracking, model cards |
+| 20 | [GenAI & LLM Lineage](chapters/20-genai-llm-lineage.md) | RAG pipeline lineage, prompt tracing, fine-tuning provenance, emerging standards |
 
 ### Part VI — Putting It All Together
 
 | Chapter | Title | Description |
 |---------|-------|-------------|
-| 20 | [Lineage at Scale](chapters/20-lineage-at-scale.md) | Performance, incremental lineage, organizational adoption, maturity model |
-| 21 | [Capstone Project: Building a Complete Lineage Platform](chapters/21-capstone-project.md) | Build a complete mini lineage platform end-to-end |
+| 21 | [Lineage at Scale](chapters/21-lineage-at-scale.md) | Performance, incremental lineage, organizational adoption, maturity model |
+| 22 | [Capstone Project: Building a Complete Lineage Platform](chapters/22-capstone-project.md) | Build a complete mini lineage platform end-to-end |
 
 ---
 
@@ -97,17 +98,18 @@ All exercises live in the [`exercises/`](exercises/) directory. See the [exercis
 
 | Tool / Library | Chapters | Purpose |
 |---------------|----------|---------|
-| [OpenLineage](https://openlineage.io/) | 5, 7, 8, 9, 15, 18 | Open standard for lineage event collection |
-| [Marquez](https://marquezproject.ai/) | 7 | Open-source lineage metadata server |
-| [SQLLineage](https://github.com/reata/sqllineage) | 6, 10 | SQL parsing for table and column lineage |
-| [Apache Airflow](https://airflow.apache.org/) | 7 | Workflow orchestration with lineage integration |
-| [Apache Spark / PySpark](https://spark.apache.org/) | 8, 15 | Distributed data processing with lineage capture |
-| [dbt](https://www.getdbt.com/) | 9 | Analytics engineering with built-in lineage graphs |
-| [Great Expectations](https://greatexpectations.io/) | 13 | Data quality validation with lineage awareness |
-| [Neo4j](https://neo4j.com/) | 11 | Graph database for lineage storage and querying |
-| [NetworkX](https://networkx.org/) | 4, 12 | Python graph library for building lineage models |
-| [MLflow](https://mlflow.org/) | 18 | ML experiment tracking and model registry |
-| [FastAPI](https://fastapi.tiangolo.com/) | 12 | Building lineage query APIs |
+| [Kedro](https://kedro.org/) | 7 | Python data pipeline framework with built-in lineage |
+| [OpenLineage](https://openlineage.io/) | 5, 7, 8, 9, 10, 16, 19 | Open standard for lineage event collection |
+| [Marquez](https://marquezproject.ai/) | 8 | Open-source lineage metadata server |
+| [SQLLineage](https://github.com/reata/sqllineage) | 6, 11 | SQL parsing for table and column lineage |
+| [Apache Airflow](https://airflow.apache.org/) | 8 | Workflow orchestration with lineage integration |
+| [Apache Spark / PySpark](https://spark.apache.org/) | 9, 16 | Distributed data processing with lineage capture |
+| [dbt](https://www.getdbt.com/) | 10 | Analytics engineering with built-in lineage graphs |
+| [Great Expectations](https://greatexpectations.io/) | 14 | Data quality validation with lineage awareness |
+| [Neo4j](https://neo4j.com/) | 12 | Graph database for lineage storage and querying |
+| [NetworkX](https://networkx.org/) | 4, 7, 13 | Python graph library for building lineage models |
+| [MLflow](https://mlflow.org/) | 19 | ML experiment tracking and model registry |
+| [FastAPI](https://fastapi.tiangolo.com/) | 13 | Building lineage query APIs |
 
 ---
 

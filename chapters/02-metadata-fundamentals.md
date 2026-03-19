@@ -135,7 +135,7 @@ Operational metadata describes **what happened at runtime**: the execution histo
 | **Resource usage** | CPU, memory, Spark executors, cost |
 | **Lineage events** | Which inputs were read, which outputs were written, for a specific run |
 
-Operational metadata is **machine-generated at runtime** and forms the basis of data observability (see [Chapter 14](14-data-observability.md)).
+Operational metadata is **machine-generated at runtime** and forms the basis of data observability (see [Chapter 15](15-data-observability.md)).
 
 ```python
 # Example: Operational metadata for an ETL job run

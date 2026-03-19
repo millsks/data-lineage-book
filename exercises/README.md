@@ -59,6 +59,7 @@ matplotlib = "*"
 pandas = "*"
 pyarrow = "*"
 scikit-learn = "*"
+kedro = "*"
 fastapi = "*"
 uvicorn = "*"
 httpx = "*"
@@ -105,21 +106,22 @@ compatible JDK, and `pyarrow` ships with the Arrow C++ runtime, avoiding
 | `ch04_first_graph.py` | 4 | `networkx`, `matplotlib` |
 | `ch05_openlineage_events.py` | 5 | `openlineage-python` |
 | `ch06_sql_parsing.py` | 6 | `sqllineage` |
-| `ch07_airflow_marquez.py` | 7 | `apache-airflow`, `apache-airflow-providers-openlineage` |
-| `ch08_spark_lineage.py` | 8 | `pyspark`, `openlineage-spark` |
-| `ch09_dbt_lineage.py` | 9 | `dbt-core`, `dbt-postgres` |
-| `ch10_column_lineage.py` | 10 | `sqllineage`, `openlineage-python` |
-| `ch11_neo4j_lineage.py` | 11 | `neo4j`, `networkx` |
-| `ch12_lineage_api.py` | 12 | `fastapi`, `uvicorn`, `httpx`, `networkx` |
-| `ch13_quality_lineage.py` | 13 | `great-expectations`, `networkx` |
-| `ch14_observability.py` | 14 | `networkx`, `pandas` |
-| `ch15_streaming_lineage.py` | 15 | `confluent-kafka`, `openlineage-python` |
-| `ch16_governance.py` | 16 | `networkx` |
-| `ch17_data_mesh.py` | 17 | `networkx` |
-| `ch18_ml_lineage.py` | 18 | `mlflow`, `scikit-learn`, `openlineage-python` |
-| `ch19_genai_lineage.py` | 19 | `langchain`, `chromadb`, `openai` |
-| `ch20_scale.py` | 20 | `networkx` |
-| `ch21_capstone/` | 21 | `networkx`, `fastapi` |
+| `ch07_kedro_lineage.py` | 7 | `kedro`, `networkx` |
+| `ch08_airflow_marquez.py` | 8 | `apache-airflow`, `apache-airflow-providers-openlineage` |
+| `ch09_spark_lineage.py` | 9 | `pyspark`, `openlineage-spark` |
+| `ch10_dbt_lineage.py` | 10 | `dbt-core`, `dbt-postgres` |
+| `ch11_column_lineage.py` | 11 | `sqllineage`, `openlineage-python` |
+| `ch12_neo4j_lineage.py` | 12 | `neo4j`, `networkx` |
+| `ch13_lineage_api.py` | 13 | `fastapi`, `uvicorn`, `httpx`, `networkx` |
+| `ch14_quality_lineage.py` | 14 | `great-expectations`, `networkx` |
+| `ch15_observability.py` | 15 | `networkx`, `pandas` |
+| `ch16_streaming_lineage.py` | 16 | `confluent-kafka`, `openlineage-python` |
+| `ch17_governance.py` | 17 | `networkx` |
+| `ch18_data_mesh.py` | 18 | `networkx` |
+| `ch19_ml_lineage.py` | 19 | `mlflow`, `scikit-learn`, `openlineage-python` |
+| `ch20_genai_lineage.py` | 20 | `langchain`, `chromadb`, `openai` |
+| `ch21_scale.py` | 21 | `networkx` |
+| `ch22_capstone/` | 22 | `networkx`, `fastapi` |
 
 ---
 
@@ -127,7 +129,7 @@ compatible JDK, and `pyarrow` ships with the Arrow C++ runtime, avoiding
 
 Some exercises require external services running in Docker:
 
-### Marquez (Chapter 7)
+### Marquez (Chapter 8)
 
 ```bash
 git clone https://github.com/MarquezProject/marquez.git
@@ -137,7 +139,7 @@ docker compose up -d
 # Marquez UI:  http://localhost:3000
 ```
 
-### Neo4j (Chapter 11)
+### Neo4j (Chapter 12)
 
 ```bash
 docker run -d \
@@ -150,7 +152,7 @@ docker run -d \
 # Bolt:    bolt://localhost:7687
 ```
 
-### Kafka + Zookeeper (Chapter 15)
+### Kafka + Zookeeper (Chapter 16)
 
 ```bash
 docker compose -f - <<'EOF' up -d

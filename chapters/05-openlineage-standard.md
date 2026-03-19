@@ -23,7 +23,7 @@
 
 ## 5.1 Why a Standard Matters
 
-Before OpenLineage, every tool had its own lineage format. Airflow emitted lineage one way, Spark another, dbt yet another. Stitching them together into a unified graph was a nightmare of custom glue code.
+Before OpenLineage, every tool had its own lineage format. Kedro emitted lineage one way, Airflow another, Spark yet another, and dbt had its own approach. Stitching them together into a unified graph was a nightmare of custom glue code.
 
 ```mermaid
 graph TD
@@ -796,7 +796,7 @@ In this chapter, you learned:
 - **Facets** provide extensible metadata without bloating the core spec
 - **Namespaces** and naming conventions are critical for graph integrity
 - **Transports** (HTTP, Kafka, Console, File) define how events are delivered
-- The **integration ecosystem** covers Airflow, Spark, dbt, Flink, and more
+- The **integration ecosystem** covers Kedro, Airflow, Spark, dbt, Flink, and more
 - The `openlineage-python` library lets you **emit events** from custom code
 
 ### Key Takeaway

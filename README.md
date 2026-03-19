@@ -27,8 +27,8 @@ All exercises live in the [`exercises/`](exercises/) directory with setup instru
 
 - **Python 3.10+** (3.12 recommended)
 - **Basic SQL** knowledge
-- Familiarity with at least one data processing tool (Spark, Airflow, dbt, or similar)
-- [**pixi**](https://pixi.sh) package manager (v0.20.0+) for environment management
+- Familiarity with at least one data processing tool — [**Kedro**](https://kedro.org/) is the primary tool used in this book, with additional coverage of Spark, Airflow, and dbt
+- [**pixi**](https://pixi.sh) package manager (v0.65+) for environment management
 - **Docker** for exercises requiring Marquez, Neo4j, or Kafka
 
 ## Book Structure
@@ -36,11 +36,11 @@ All exercises live in the [`exercises/`](exercises/) directory with setup instru
 | Part | Chapters | Topics |
 |------|----------|--------|
 | **I — Foundations** | 1–4 | Definitions, metadata, data models, first lineage graph |
-| **II — Open-Source Tooling** | 5–9 | OpenLineage, SQL parsing, Airflow, Spark, dbt |
-| **III — Advanced Techniques** | 10–12 | Column-level lineage, graph databases, Lineage API |
-| **IV — Governance & Quality** | 13–17 | Data quality, observability, streaming, compliance, data mesh |
-| **V — AI & Data Lineage** | 18–19 | ML/MLOps lineage, GenAI & LLM lineage |
-| **VI — Putting It All Together** | 20–21 | Lineage at scale, capstone project |
+| **II — Open-Source Tooling** | 5–10 | OpenLineage, SQL parsing, Kedro, Airflow, Spark, dbt |
+| **III — Advanced Techniques** | 11–13 | Column-level lineage, graph databases, Lineage API |
+| **IV — Governance & Quality** | 14–18 | Data quality, observability, streaming, compliance, data mesh |
+| **V — AI & Data Lineage** | 19–20 | ML/MLOps lineage, GenAI & LLM lineage |
+| **VI — Putting It All Together** | 21–22 | Lineage at scale, capstone project |
 
 ## License
 
